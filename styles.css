@@ -1,0 +1,201 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway';
+  background-color: #958500;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: bold;
+  color: #322D00;
+  padding-top: 10px;
+  padding-left: 120px;
+}
+
+.words-container {
+  height: 100vh;
+}
+
+.container-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+.container-a .container__headline {
+  font-size: 5vmin;
+}
+.container-a .hero__inner {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
+.container-a .hero__inner::before {
+  content: "";
+  display: block;
+  padding-bottom: calc(100% / (16 / 9));
+}
+.container-a svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.container-a .carousel-3 {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container-a .hero__image {
+  position: absolute;
+  top: 185px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container-a .hero__content {
+  position: relative;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.container-a .hero__headline {
+  --padding: 1.5vmin;
+  --duration: 400ms;
+  --delay: calc(var(--duration) / 2);
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  display: inline-block;
+  font-size: 10vmin;
+  overflow: hidden;
+  margin-top: calc(var(--padding) * -1);
+  padding: var(--padding);
+}
+.container-a .hero__headline::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - var(--padding));
+  left: 0;
+  background-color: white;
+  width: 100%;
+  height: 1.5vmin;
+  transform: scaleX(0);
+  transition: transform var(--duration) var(--delay) var(--ease);
+}
+.container-a .hero__headline span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform var(--duration) var(--ease);
+}
+.active .container-a .hero__headline::after {
+  transform: scaleX(1);
+  transition-delay: 0s;
+}
+.active .container-a .hero__headline span {
+  transform: translateY(0);
+  transition-delay: var(--delay);
+}
+.container-a .hero__extra {
+  padding: 100px;
+}
+.container-a .scrollmagic {
+  height: 1000px;
+  font-weight: 900;
+  font-size: 35em;
+}
+.container-a .container-s {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.container-a .video-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container-a .svg-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.container-a svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: block;
+}
+.container-a svg text {
+  text-anchor: middle;
+}
+.container-a svg mask rect {
+  /*   fill: rgba(255, 255, 255, 0.8); */
+  fill: white;
+}
+.container-a svg > rect {
+  fill: white;
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+}
+.container-a .video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  z-index: -1;
+  overflow: hidden;
+}
+.container-a video {
+  min-height: 100%;
+  min-width: 100%;
+  height: 150%;
+  width: 150%;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -80%);
+}
+
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.box .image-box {
+  width: 50%;
+}
+
+.box .image-box img {
+  object-fit: cover;
+}
+
+.box .content {
+  width: 50%;
+  height: 100vh;
+  color: white;
+  text-align: start;
+  padding: 70px 70px;
+}
